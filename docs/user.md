@@ -8,9 +8,9 @@ Request Body :
 
 ```json
 {
-  "username": "aribroo",
-  "password": "ari123",
-  "name": "Rifki Ari"
+  "username": "test",
+  "password": "secretkey",
+  "name": "test"
 }
 ```
 
@@ -19,8 +19,8 @@ Response Success :
 ```json
 {
   "data": {
-    "username": "aribroo",
-    "name": "Rifki Ari"
+    "username": "test",
+    "name": "secretkey"
   }
 }
 ```
@@ -29,7 +29,7 @@ Response Error :
 
 ```json
 {
-  "errors": "username already use"
+  "errors": "Username already used"
 }
 ```
 
@@ -41,8 +41,8 @@ Request Body :
 
 ```json
 {
-  "username": "aribroo",
-  "password": "ari123"
+  "username": "test",
+  "password": "secretkey"
 }
 ```
 
@@ -51,7 +51,7 @@ Response Success :
 ```json
 {
   "data": {
-    "token": "token123"
+    "token": "token"
   }
 }
 ```
@@ -74,8 +74,8 @@ Request Body :
 
 ```json
 {
-  "name": "aribroo", // optional
-  "password": "rahasia" // optional
+  "name": "testupdate",
+  "password": "secretkey123"
 }
 ```
 
@@ -84,8 +84,8 @@ Response Success :
 ```json
 {
   "data": {
-    "username": "aribroo",
-    "name": "Darmawan"
+    "username": "test",
+    "name": "testupdate"
   }
 }
 ```
@@ -94,7 +94,7 @@ Response Error :
 
 ```json
 {
-  "errors": "name max length 100"
+  "errors": "Name max length 100"
 }
 ```
 
@@ -109,8 +109,8 @@ Response Success :
 ```json
 {
   "data": {
-    "username": "aribroo",
-    "name": "Darmawan"
+    "username": "test",
+    "name": "testupdate"
   }
 }
 ```

@@ -13,10 +13,10 @@ Request Body :
 ```json
 {
   "county": "Indonesia",
-  "province": "Jawa Barat",
+  "province": "West Java",
   "city": "Bekasi",
-  "street": "Jalan Ceri",
-  "postal_code": "17520"
+  "street": "Soekarno street",
+  "postal_code": "1112222"
 }
 ```
 
@@ -27,10 +27,10 @@ Response Success
   "data": {
     "id": 1,
     "county": "Indonesia",
-    "province": "Jawa Barat",
+    "province": "West Java",
     "city": "Bekasi",
-    "street": "Jalan Ceri",
-    "postal_code": "17520"
+    "street": "Soekarno street",
+    "postal_code": "1112222"
   }
 }
 ```
@@ -56,10 +56,10 @@ Request Body :
 ```json
 {
   "county": "Indonesia",
-  "province": "Jawa Barat",
-  "city": "Bekasi",
-  "street": "Jalan Ceri",
-  "postal_code": "17520"
+  "province": "East Java",
+  "city": "Malang",
+  "street": "Juanda street",
+  "postal_code": "12345"
 }
 ```
 
@@ -70,10 +70,10 @@ Response Success
   "data": {
     "id": 1,
     "county": "Indonesia",
-    "province": "Jawa Barat",
-    "city": "Bekasi",
-    "street": "Jalan Ceri",
-    "postal_code": "17520"
+    "province": "East Java",
+    "city": "Malang",
+    "street": "Juanda street",
+    "postal_code": "12345"
   }
 }
 ```
@@ -101,10 +101,10 @@ Response Success
   "data": {
     "id": 1,
     "county": "Indonesia",
-    "province": "Jawa Barat",
-    "city": "Bekasi",
-    "street": "Jalan Ceri",
-    "postal_code": "17520"
+    "province": "East Java",
+    "city": "Malang",
+    "street": "Juanda street",
+    "postal_code": "12345"
   }
 }
 ```
@@ -113,7 +113,7 @@ Response Error
 
 ```json
 {
-  "errors": "Address not found"
+  "errors": "Address is not found"
 }
 ```
 
@@ -133,18 +133,18 @@ Response Success
     {
       "id": 1,
       "county": "Indonesia",
-      "province": "Jawa Barat",
+      "province": "West Java",
       "city": "Bekasi",
-      "street": "Jalan Ceri",
-      "postal_code": "17520"
+      "street": "Soekarno street",
+      "postal_code": "112233"
     },
     {
       "id": 2,
       "county": "Indonesia",
-      "province": "Jawa Barat",
-      "city": "Bekasi",
-      "street": "Jalan Ceri",
-      "postal_code": "17520"
+      "province": "East Java",
+      "city": "Malang",
+      "street": "Juanda street",
+      "postal_code": "12345"
     }
   ]
 }
@@ -154,7 +154,7 @@ Response Error
 
 ```json
 {
-  "errors": "Address not found"
+  "errors": "Address is not found"
 }
 ```
 
@@ -180,6 +180,6 @@ Response Error
 
 ```json
 {
-  "errors": "Address not found"
+  "errors": "Address is not found"
 }
 ```

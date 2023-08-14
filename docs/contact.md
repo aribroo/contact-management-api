@@ -12,10 +12,10 @@ Request Body :
 
 ```json
 {
-  "fist_name": "Rifki",
-  "last_name": "Ari",
-  "email": "rifkiari@gmail.com",
-  "phone": "0851123456"
+  "fist_name": "Jhon",
+  "last_name": "Doe",
+  "email": "john@gmail.com",
+  "phone": "081234567"
 }
 ```
 
@@ -25,10 +25,10 @@ Response Success
 {
   "data": {
     "id": 1,
-    "fist_name": "Rifki",
-    "last_name": "Ari",
-    "email": "rifkiari@gmail.com",
-    "phone": "0851123456"
+    "fist_name": "John",
+    "last_name": "Doe",
+    "email": "john@gmail.com",
+    "phone": "081234567"
   }
 }
 ```
@@ -37,7 +37,7 @@ Response Error
 
 ```json
 {
-  "errors": "Phone already used"
+  "errors": "Number phone already used"
 }
 ```
 
@@ -53,10 +53,10 @@ Request Body :
 
 ```json
 {
-  "fist_name": "Rifki",
-  "last_name": "Ari",
-  "email": "rifkiari@gmail.com",
-  "phone": "0851123456"
+  "fist_name": "Jhonny",
+  "last_name": "",
+  "email": "john@gmail.com",
+  "phone": "081234567"
 }
 ```
 
@@ -66,10 +66,10 @@ Response Success
 {
   "data": {
     "id": 1,
-    "fist_name": "Rifki",
-    "last_name": "Ari",
-    "email": "rifkiari@gmail.com",
-    "phone": "0851123456"
+    "fist_name": "Jhonny",
+    "last_name": "",
+    "email": "john@gmail.com",
+    "phone": "081234567"
   }
 }
 ```
@@ -78,7 +78,7 @@ Response Error
 
 ```json
 {
-  "errors": "Phone already used"
+  "errors": "Number phone already used"
 }
 ```
 
@@ -96,10 +96,10 @@ Response Success
 {
   "data": {
     "id": 1,
-    "fist_name": "Rifki",
-    "last_name": "Ari",
-    "email": "rifkiari@gmail.com",
-    "phone": "0851123456"
+    "fist_name": "John",
+    "last_name": "",
+    "email": "john@gmail.com",
+    "phone": "0851234567"
   }
 }
 ```
@@ -108,7 +108,7 @@ Response Error
 
 ```json
 {
-  "errors": "Contact not found"
+  "errors": "Contact is not found"
 }
 ```
 
@@ -135,23 +135,23 @@ Response success
   "data": [
     {
       "id": 1,
-      "fist_name": "Rifki",
-      "last_name": "Ari",
-      "email": "rifkiari@gmail.com",
-      "phone": "0851123456"
+      "fist_name": "Jhon",
+      "last_name": "",
+      "email": "john@gmail.com",
+      "phone": "081234567"
     },
     {
       "id": ,
-      "fist_name": "Dimas",
-      "last_name": "Prasejarah",
-      "email": "dimas@gmail.com",
-      "phone": "0851123456"
+      "fist_name": "Zack",
+      "last_name": "Arnold",
+      "email": "zck@gmail.com",
+      "phone": "08111222333"
     }
   ],
   "paging" : {
     "page": 1,
-    "total_page": 3,
-    "total_item" : 28
+    "total_page": 1,
+    "total_item" : 2
   }
 }
 ```
@@ -160,7 +160,7 @@ Response error
 
 ```json
 {
-  "errors": "Contact not found"
+  "errors": "Contact is not found"
 }
 ```
 
@@ -184,6 +184,6 @@ Response error
 
 ```json
 {
-  "errors": "Contact not found"
+  "errors": "Contact is not found"
 }
 ```
