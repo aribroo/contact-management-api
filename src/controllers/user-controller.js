@@ -5,7 +5,7 @@ const register = async (req, res, next) => {
     const result = await userService.register(req.body);
 
     res.status(200).json({
-      data: result,
+      data: result
     });
   } catch (err) {
     next(err);
@@ -17,7 +17,7 @@ const login = async (req, res, next) => {
     const result = await userService.login(req.body);
 
     res.status(200).json({
-      data: result,
+      data: result
     });
   } catch (err) {
     next(err);
@@ -30,7 +30,7 @@ const get = async (req, res, next) => {
     const result = await userService.get(username);
 
     res.status(200).json({
-      data: result,
+      data: result
     });
   } catch (err) {
     next(err);
@@ -56,7 +56,7 @@ const logout = async (req, res, next) => {
     const username = req.user.username;
     await userService.logout(username);
     res.status(200).json({
-      data: 'OK',
+      data: 'OK'
     });
   } catch (err) {
     next();

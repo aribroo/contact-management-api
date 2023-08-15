@@ -8,7 +8,7 @@ const createContact = async (req, res, next) => {
     const result = await contactService.create(username, request);
 
     res.status(200).json({
-      data: result,
+      data: result
     });
   } catch (err) {
     next(err);
@@ -23,7 +23,7 @@ const getContact = async (req, res, next) => {
     const result = await contactService.get(user, contactId);
 
     res.status(200).json({
-      data: result,
+      data: result
     });
   } catch (err) {
     next(err);
@@ -40,7 +40,7 @@ const updateContact = async (req, res, next) => {
     const result = await contactService.update(user, contactId, request);
 
     res.status(200).json({
-      data: result,
+      data: result
     });
   } catch (err) {
     next(err);
@@ -55,14 +55,14 @@ const searchContact = async (req, res, next) => {
       email: req.query.email,
       phone: req.query.phone,
       page: req.query.page,
-      size: req.query.size,
+      size: req.query.size
     };
 
     const result = await contactService.searchContact(user, request);
 
     res.status(200).json({
       data: result.data,
-      paging: result.paging,
+      paging: result.paging
     });
   } catch (err) {
     next(err);
@@ -77,7 +77,7 @@ const deleteContact = async (req, res, next) => {
     await contactService.deleteContact(user, contactId);
 
     res.status(200).json({
-      data: 'OK',
+      data: 'OK'
     });
   } catch (err) {
     next(err);

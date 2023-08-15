@@ -27,7 +27,7 @@ describe('POST /api/contacts/:contactId/addresses', () => {
         province: 'Jawa Barat',
         city: 'Bekasi',
         street: 'Jalan ceri 10 blok c3 no 17',
-        postal_code: '17520',
+        postal_code: '17520'
       });
 
     logger.info(result.body);
@@ -53,7 +53,7 @@ describe('POST /api/contacts/:contactId/addresses', () => {
         province: 'Jawa Barat',
         city: 'Bekasi',
         street: 'Jalan ceri 10 blok c3 no 17',
-        postal_code: '17520',
+        postal_code: '17520'
       });
 
     logger.error(result.body);
@@ -74,7 +74,7 @@ describe('POST /api/contacts/:contactId/addresses', () => {
         province: '',
         city: '',
         street: 'Jalan ceri 10 blok c3 no 17',
-        postal_code: '175203234312333',
+        postal_code: '175203234312333'
       });
 
     logger.error(result.body);
@@ -261,7 +261,7 @@ describe('PUT /api/contacts/:contactId/addresses/:addressId', () => {
         province: 'Tokyo',
         city: 'Hiroshima',
         street: '',
-        postal_code: '',
+        postal_code: ''
       });
 
     logger.info(result.body);
@@ -286,7 +286,7 @@ describe('PUT /api/contacts/:contactId/addresses/:addressId', () => {
         province: '',
         city: '',
         street: '',
-        postal_code: '2333333333333333333',
+        postal_code: '2333333333333333333'
       });
 
     logger.error(result.body);
@@ -307,7 +307,7 @@ describe('PUT /api/contacts/:contactId/addresses/:addressId', () => {
         province: 'Tokyo',
         city: 'Hiroshima',
         street: '',
-        postal_code: '23333',
+        postal_code: '23333'
       });
 
     logger.error(result.body);
@@ -328,7 +328,7 @@ describe('PUT /api/contacts/:contactId/addresses/:addressId', () => {
         province: 'Tokyo',
         city: 'Hiroshima',
         street: '',
-        postal_code: '23333',
+        postal_code: '23333'
       });
 
     logger.error(result.body);

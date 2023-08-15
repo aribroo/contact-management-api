@@ -9,7 +9,7 @@ const create = async (user, request) => {
 
   const existingContacts = await prismaClient.user.findUnique({
     where: { username: contact.username },
-    include: { contacts: true },
+    include: { contacts: true }
   });
 
   const isEmailDuplicate = existingContacts.contacts.some((c) => c.email === request.email);
@@ -26,8 +26,8 @@ const create = async (user, request) => {
       first_name: true,
       last_name: true,
       email: true,
-      phone: true,
-    },
+      phone: true
+    }
   });
 };
 
@@ -37,15 +37,15 @@ const get = async (user, contactId) => {
   const contact = await prismaClient.contact.findFirst({
     where: {
       id: contactId,
-      username: user.username,
+      username: user.username
     },
     select: {
       id: true,
       first_name: true,
       last_name: true,
       email: true,
-      phone: true,
-    },
+      phone: true
+    }
   });
 
   if (contact === null) throw new ResponseError(404, 'Contact is not found');
@@ -60,53 +60,56 @@ const searchContact = async (user, request) => {
   const size = request.size;
   const page = request.page;
 
-  let filters = [];
+  const filters = [];
 
-  if (request.name)
+  if (request.name) {
     filters.push({
       OR: [
         {
-          first_name: { contains: request.name },
+          first_name: { contains: request.name }
         },
         {
-          last_name: { contains: request.name },
-        },
-      ],
-    });
-  if (request.email) {
-    filters.push({
-      email: { contains: request.email },
+          last_name: { contains: request.name }
+        }
+      ]
     });
   }
 
-  if (request.phone)
+  if (request.email) {
     filters.push({
-      phone: { contains: request.phone },
+      email: { contains: request.email }
     });
+  }
+
+  if (request.phone) {
+    filters.push({
+      phone: { contains: request.phone }
+    });
+  }
 
   const contacts = await prismaClient.contact.findMany({
     where: {
-      username: username,
-      AND: filters,
+      username,
+      AND: filters
     },
     take: size,
-    skip: (page - 1) * size,
+    skip: (page - 1) * size
   });
 
   const totalItems = await prismaClient.contact.count({
     where: {
-      username: username,
-      AND: filters,
-    },
+      username,
+      AND: filters
+    }
   });
 
   return {
     data: contacts,
     paging: {
-      page: page,
+      page,
       total_items: totalItems,
-      total_page: Math.ceil(totalItems / size),
-    },
+      total_page: Math.ceil(totalItems / size)
+    }
   };
 };
 
@@ -117,15 +120,15 @@ const update = async (user, contactId, request) => {
   const contact = await prismaClient.contact.findFirst({
     where: {
       username: user.username,
-      id: contactId,
-    },
+      id: contactId
+    }
   });
 
   if (!contact) throw new ResponseError(404, 'Contact is not found');
 
   const existingContacts = await prismaClient.user.findUnique({
     where: { username: contact.username },
-    include: { contacts: true },
+    include: { contacts: true }
   });
 
   const isEmailDuplicate = existingContacts.contacts.some((c) => c.email === request.email && c.id !== contactId);
@@ -138,22 +141,22 @@ const update = async (user, contactId, request) => {
   return prismaClient.contact.update({
     where: {
       username: user.username,
-      id: contactId,
+      id: contactId
     },
     data: {
       id: request.id,
       first_name: request.first_name,
       last_name: request.last_name,
       email: request.email,
-      phone: request.phone,
+      phone: request.phone
     },
     select: {
       id: true,
       first_name: true,
       last_name: true,
       email: true,
-      phone: true,
-    },
+      phone: true
+    }
   });
 };
 
@@ -163,19 +166,19 @@ const deleteContact = async (user, contactId) => {
 
   const contact = await prismaClient.contact.findFirst({
     where: {
-      username: username,
-      id: contactId,
+      username,
+      id: contactId
     },
-    select: { id: true },
+    select: { id: true }
   });
 
   if (!contact) throw new ResponseError(404, 'Contact is not found');
 
   return await prismaClient.contact.delete({
     where: {
-      username: username,
-      id: contactId,
-    },
+      username,
+      id: contactId
+    }
   });
 };
 

@@ -11,7 +11,7 @@ const addAdress = async (req, res, next) => {
     const result = await addressService.addAddress(user, contactId, request);
 
     res.status(200).json({
-      data: result,
+      data: result
     });
   } catch (err) {
     next(err);
@@ -27,7 +27,7 @@ const getAddress = async (req, res, next) => {
     const result = await addressService.getAddress(user, contactId, addressId);
 
     res.status(200).json({
-      data: result,
+      data: result
     });
   } catch (err) {
     next(err);
@@ -42,7 +42,7 @@ const listAddress = async (req, res, next) => {
     const result = await addressService.listAddress(user, contactId);
 
     res.status(200).json({
-      data: result,
+      data: result
     });
   } catch (err) {
     next(err);
@@ -59,7 +59,7 @@ const updateAddress = async (req, res, next) => {
     const result = await addressService.updateAddress(user, contactId, request);
 
     res.status(200).json({
-      data: result,
+      data: result
     });
   } catch (err) {
     next(err);
@@ -75,7 +75,7 @@ const deleteAddress = async (req, res, next) => {
     await addressService.deleteAddress(user, contactId, addressId);
 
     res.status(200).json({
-      data: 'OK',
+      data: 'OK'
     });
   } catch (err) {
     next(err);
